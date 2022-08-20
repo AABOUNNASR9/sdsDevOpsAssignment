@@ -9,7 +9,7 @@ on:
 
 
 jobs:
-  build & test:
+  build:
   
     runs-on: self-hosted
 
@@ -35,4 +35,11 @@ jobs:
       run: |
         cd ${{github.workspace}}/cpp_project/build
         ctest 
+
+    - name: Python Test
+      # Build your program with the given configuration
+
+      run: |
+        cd ${{github.workspace}}/py
+        python3 -m pytest
         
