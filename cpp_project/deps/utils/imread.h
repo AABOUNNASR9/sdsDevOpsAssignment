@@ -16,7 +16,7 @@ std::vector<T> imread(std::string fpath, std::array<int, 3> shape)
     std::vector<T> out(size);
 
     std::ifstream infile(fpath);
-    assert(infile.good());
+    //assert(infile.good());
     infile.read((char*)out.data(), size*sizeof(T));
 
     return out;
