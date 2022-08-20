@@ -50,4 +50,10 @@ jobs:
         cd ${{github.workspace}}/py
         pylint --exit-zero ./tests
         pylint --exit-zero ./acme_mylib
+
+    - name: Dynamic check
+
+      run: |
+        cd ${{github.workspace}}/cpp_project/build/app
+        valgrind --tool=memcheck --leak-check=yes --track-origins=yes ./app
         
