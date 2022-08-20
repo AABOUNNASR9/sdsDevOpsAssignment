@@ -1,0 +1,32 @@
+name: CMake
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
+
+jobs:
+  build:
+  
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+          clean: true
+          
+
+    - name: Configure CMake
+      
+      run: cmake -E make_directory ${{github.workspace}}/cpp_project/build
+
+    - name: Build
+
+      run: |
+        cd ${{github.workspace}}/cpp_project/build
+        CC=clang CXX=clang++ cmake ..
+        cmake --build .
+        
