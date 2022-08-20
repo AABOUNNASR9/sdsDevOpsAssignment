@@ -25,4 +25,4 @@ void mylib_process(mylib_image* frame, mylib_output_frame* output_frame);
 ffi = FFI()
 ffi.cdef(source)
 
-lib = ffi.dlopen(str(THIS_DIR / "mylib.dll"))
+lib = ffi.dlopen(str(THIS_DIR / "libmylib.so"))
