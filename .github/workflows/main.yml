@@ -29,4 +29,10 @@ jobs:
         cd ${{github.workspace}}/cpp_project/build
         CC=clang CXX=clang++ cmake ..
         cmake --build .
+
+    - name: c++ Test
+
+      run: |
+        cd ${{github.workspace}}/cpp_project/build
+        ctest 
         
