@@ -37,9 +37,17 @@ jobs:
         ctest 
 
     - name: Python Test
-      # Build your program with the given configuration
 
       run: |
         cd ${{github.workspace}}/py
         python3 -m pytest
+
+    - name: Static analysis cppcheck & Pylint
+
+      run: |
+        cd ${{github.workspace}}/cpp_project
+        cppcheck --enable=all .
+        cd ${{github.workspace}}/py
+        pylint --exit-zero ./tests
+        pylint --exit-zero ./acme_mylib
         
