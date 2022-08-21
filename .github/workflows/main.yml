@@ -12,7 +12,7 @@ jobs:
   build:
   
     runs-on: self-hosted
-
+    #run the code in the agent
     steps:
     - uses: actions/checkout@v2
       with:
